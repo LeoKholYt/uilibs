@@ -230,7 +230,7 @@ function Library:CreateMain(Options)
 	
 	local CategoryDistanceCounter = 0
 	
-	function Main:CreateCategory(name)
+	function Main:CreateCategory(Name)
 		
 		local Category = {}
 		
@@ -243,7 +243,7 @@ function Library:CreateMain(Options)
 			ZIndex = 2,
 			Font = Enum.Font.GothamBold,
 			Text = Name,
-			Name = name,
+			Name = Name,
 			TextColor3 = Color3.fromRGB(255,255,255),
 			TextSize = 18,
 			TextWrapped = true,
@@ -251,7 +251,7 @@ function Library:CreateMain(Options)
 		})
 		
 		Category.Container = Library:Create("ScrollingFrame", {
-			Name = name.."Category",
+			Name = Name.."Category",
 			BackgroundColor3 = Color3.fromRGB(46, 46, 54),
 			BorderSizePixel = 0,
 			Size = UDim2.new(1, 0, 1, 0),
@@ -289,12 +289,12 @@ function Library:CreateMain(Options)
 			Category.Container.Visible = true
 		end)
 		
-		function Category:CreateSection(name)
+		function Category:CreateSection(Name)
 			
 			local Section = {}
 			
 			Section.Container = Library:Create("ImageLabel", {
-				Name = name.."Section",
+				Name = Name.."Section",
 				BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 				BackgroundTransparency = 1.000,
 				BorderSizePixel = 0,
@@ -325,7 +325,7 @@ function Library:CreateMain(Options)
 				Position = UDim2.new(-0.00999999978, 0, 0, -10),
 				Size = UDim2.new(0.38499999, 0, 0, 25),
 				Font = Enum.Font.GothamBold,
-				Text = name,
+				Text = Name,
 				TextColor3 = Color3.fromRGB(255,255,255),
 				TextSize = 18.000,
 				TextXAlignment = Enum.TextXAlignment.Left,
@@ -338,14 +338,14 @@ function Library:CreateMain(Options)
 			
 			Category.Container.CanvasSize = Category.Container.CanvasSize + UDim2.new(0, 0, 0, 50)
 			
-			function Section:Create(Type, name, CallBack, Options)
+			function Section:Create(Type, Name, CallBack, Options)
 				
 				local Interactables = {}
 				
 				if Type:lower() == "button" then 
 					
 					Interactables.ButtonFrame = Library:Create("Frame", {
-						Name = name.."Button",
+						Name = Name.."Button",
 						Active = true,
 						BackgroundColor3 = Color3.fromRGB(248, 248, 248),
 						BackgroundTransparency = 1.000,
@@ -377,7 +377,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0.100000001, 0, 0, 0),
 						Size = UDim2.new(0.8, 0, 0, 30),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255,255,255),
 						TextSize = 18.000,
 					})
@@ -423,7 +423,7 @@ function Library:CreateMain(Options)
 					local Value = 0
 					
 					Interactables.Slider = Library:Create("ImageLabel", {
-						Name = name.."Slider",
+						Name = Name.."Slider",
 						BackgroundColor3 = Color3.fromRGB(248, 248, 248),
 						BackgroundTransparency = 1.000,
 						BorderColor3 = Color3.fromRGB(27, 42, 53),
@@ -444,7 +444,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0, 4, 0, 2),
 						Size = UDim2.new(0, 200, 0, 30),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255,255,255),
 						TextSize = 18.000,
 						TextXAlignment = Enum.TextXAlignment.Left,
@@ -581,7 +581,7 @@ function Library:CreateMain(Options)
 					local State = false
 					
 					Interactables.Toggle = Library:Create("ImageButton", {
-						Name = name.."Toggle",
+						Name = Name.."Toggle",
 						BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 						BackgroundTransparency = 1,
 						BorderSizePixel = 0,
@@ -601,7 +601,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0.00800000038, 0, 0.057, 0),
 						Size = UDim2.new(0.399576753, 0, 0.857142866, 0),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255,255,255),
 						TextSize = 18.000,
 						TextXAlignment = Enum.TextXAlignment.Left,
@@ -701,7 +701,7 @@ function Library:CreateMain(Options)
 					end
 					
 					Interactables.TextBox = Library:Create("ImageLabel", {
-						Name = name.."Textbox",
+						Name = Name.."Textbox",
 						BackgroundColor3 = Color3.fromRGB(248, 248, 248),
 						BackgroundTransparency = 1.000,
 						BorderSizePixel = 0,
@@ -720,7 +720,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0, 4, 0, 2),
 						Size = UDim2.new(0.400000006, 0, 0, 30),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255, 255, 255),
 						TextSize = 18.000,
 						TextXAlignment = Enum.TextXAlignment.Left,
@@ -776,7 +776,7 @@ function Library:CreateMain(Options)
 				elseif Type:lower() == "textlabel" then 
 					
 					Interactables.TextLabelBox = Library:Create("ImageLabel", {
-						Name = name.."TextLabel",
+						Name = Name.."TextLabel",
 						BackgroundColor3 = Color3.fromRGB(248, 248, 248),
 						BackgroundTransparency = 1.000,
 						BorderSizePixel = 0,
@@ -800,8 +800,8 @@ function Library:CreateMain(Options)
 						TextXAlignment = Enum.TextXAlignment.Left,
 					})
 					
-					if #name <= 46 then
-						Interactables.Textlabel.Text = name
+					if #Name <= 46 then
+						Interactables.Textlabel.Text = Name
 					end
 
 					function Interactables:SetText(Text)
@@ -820,7 +820,7 @@ function Library:CreateMain(Options)
 				elseif Type:lower() == "keybind" then 
 					
 					Interactables.KeyBindBox = Library:Create("ImageLabel", {
-						Name = name.."KeyBind",
+						Name = Name.."KeyBind",
 						Active = true,
 						BackgroundColor3 = Color3.fromRGB(248, 248, 248),
 						BackgroundTransparency = 1.000,
@@ -842,7 +842,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0.00800000038, 0, 0, 2),
 						Size = UDim2.new(0.400000006, 0, 0, 30),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255, 255, 255),
 						TextSize = 18.000,
 						TextXAlignment = Enum.TextXAlignment.Left,
@@ -1017,7 +1017,7 @@ function Library:CreateMain(Options)
 						end
 						
 						Interactables.dropdownb = Library:Create("ImageLabel", {
-							Name = name.."DropDown",
+							Name = Name.."DropDown",
 							BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 							BackgroundTransparency = 1.000,
 							BorderColor3 = Color3.fromRGB(27, 42, 53),
@@ -1033,7 +1033,7 @@ function Library:CreateMain(Options)
 						Interactables.dropdownb.ClipsDescendants = true
 						
 						Interactables.dropdown = Library:Create("ImageButton", {
-							Name = name.."DropDown",
+							Name = Name.."DropDown",
 							BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 							BackgroundTransparency = 1.000,
 							BorderColor3 = Color3.fromRGB(27, 42, 53),
@@ -1378,7 +1378,7 @@ function Library:CreateMain(Options)
 						end
 						
 						Interactables.dropdownb = Library:Create("ImageLabel", {
-							Name = name.."DropDown",
+							Name = Name.."DropDown",
 							BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 							BackgroundTransparency = 1.000,
 							BorderColor3 = Color3.fromRGB(27, 42, 53),
@@ -1394,7 +1394,7 @@ function Library:CreateMain(Options)
 						Interactables.dropdownb.ClipsDescendants = true
 						
 						Interactables.dropdown = Library:Create("ImageButton", {
-							Name = name.."DropDown",
+							Name = Name.."DropDown",
 							BackgroundColor3 = Color3.fromRGB(255, 255, 255),
 							BackgroundTransparency = 1.000,
 							BorderColor3 = Color3.fromRGB(27, 42, 53),
@@ -1792,7 +1792,7 @@ function Library:CreateMain(Options)
 						Position = UDim2.new(0.008, 0, 0, 2),
 						Size = UDim2.new(0.4, 0, 0, 30),
 						Font = Enum.Font.GothamBold,
-						Text = name,
+						Text = Name,
 						TextColor3 = Color3.fromRGB(255, 255, 255),
 						TextSize = 18.000,
 						TextXAlignment = Enum.TextXAlignment.Left,
