@@ -1284,7 +1284,7 @@ function finity.new(isdark, gprojectName, thinProject)
 							Size = UDim2.new(1, 0, 1, 0),
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
-							Text = button_text or "Button",
+							Text = data.bigButton and name or button_text or "Button",
 							TextColor3 = theme.textbox_text,
 							TextSize = 13,
 							TextXAlignment = Enum.TextXAlignment.Center
