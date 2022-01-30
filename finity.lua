@@ -9,7 +9,9 @@
 	Version:
 	 0.1.5
 	Date: 
-		April 21th, 2020
+		January 30th, 2022
+	Edited by: 
+		lkhub @ lkhub.net
 	Author: 
 		detourious @ v3rmillion.netf
 					
@@ -1284,7 +1286,7 @@ function finity.new(isdark, gprojectName, thinProject)
 							Size = UDim2.new(1, 0, 1, 0),
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
-							Text = data.bigButton and name or button_text or "Button",
+							Text = data and data.bigButton and name or data and not data.bigButton and button_text or "Button",
 							TextColor3 = theme.textbox_text,
 							TextSize = 13,
 							TextXAlignment = Enum.TextXAlignment.Center
