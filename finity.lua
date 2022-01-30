@@ -555,7 +555,7 @@ function finity.new(isdark, gprojectName, thinProject)
 					Size = UDim2.new(1, 0, 0, 25),
 					ZIndex = 2,
 				})
-				if data and not data.bigButton then
+				local function label()
 					cheat.label = finity:Create("TextLabel", {
 						Name = "Title",
 						BackgroundColor3 = Color3.new(1, 1, 1),
@@ -568,6 +568,18 @@ function finity.new(isdark, gprojectName, thinProject)
 						Text = name,
 						TextXAlignment = Enum.TextXAlignment.Left
 					})
+				end
+				
+				if data then
+					if string.lower(kind) == "button" then
+						if not data.bigButton then
+							label()
+						end
+					else
+						label()
+					end
+				else
+					label()
 				end
 
 				local containerFrameP = {
