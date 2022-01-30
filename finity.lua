@@ -567,7 +567,7 @@ function finity.new(isdark, gprojectName, thinProject)
 						TextXAlignment = Enum.TextXAlignment.Left
 					})
 				end
-				
+
 				local containerFrameP = {
 					Name = "Container",
 					AnchorPoint = Vector2.new(1, 0.5),
@@ -599,7 +599,7 @@ function finity.new(isdark, gprojectName, thinProject)
 							Size = UDim2.new(0, 25, 0, 25),
 							ZIndex = 2,
 						})
-						
+
 						cheat.outerbox = finity:Create("ImageLabel", {
 							Name = "Outer",
 							AnchorPoint = Vector2.new(1, 0.5),
@@ -1480,7 +1480,8 @@ function finity.new(isdark, gprojectName, thinProject)
 				end
 
 				cheat.frame.Parent = sector.container
-				cheat.label.Parent = cheat.frame
+
+				if cheat.label then cheat.label.Parent = cheat.frame end
 				cheat.container.Parent = cheat.frame
 
 				return cheat
