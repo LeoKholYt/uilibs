@@ -9,7 +9,7 @@
 	Version:
 	 0.1.5
 	Date: 
-		January 30th, 2022
+		February 8th, 2022
 	Edited by: 
 		lkhub @ lkhub.net
 	Author: 
@@ -976,6 +976,11 @@ function finity.new(isdark, gprojectName, thinProject)
 						end)
 
 						refreshOptions()
+						
+						function cheat:Clear()
+							options = {}
+							refreshOptions()
+						end
 
 						function cheat:RemoveOption(value)
 							local removed = false
